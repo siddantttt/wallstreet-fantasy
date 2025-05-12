@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <title>Wall Street Fantasy League</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="/manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceWorker.js')
+        .then(() => console.log('✅ Service Worker registered'));
+    }
+  </script>
 </head>
 <body>
   <div id="app"></div>

@@ -4,7 +4,11 @@ const router = express.Router();
 const { registerUser, loginUser, updateUserData } = require('../controllers/userController');
 
 const axios = require('axios');
-const User = require('../models/user');
+const User = require('../models/User');
+
+const io = req.app.get('io');
+io.emit('leaderboardUpdate');
+
 
 
 router.post('/register', registerUser);

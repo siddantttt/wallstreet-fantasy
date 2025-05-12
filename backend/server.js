@@ -8,6 +8,22 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require('socket.io');
+const io = new Server(server, { cors: { origin: '*' } });
+
+io.on('connection', socket => {
+  console.log('📡 Client connected');
+});
+
+app.set('io', io); // pass io to all routes
+
+server.listen(PORT, () => {
+  console.log(`🔥 Server running on port ${PORT}`);
+});
+
+
 // === MIDDLEWARE ===
 app.use(cors());
 app.use(bodyParser.json());

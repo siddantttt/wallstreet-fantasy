@@ -2,6 +2,14 @@ const app = document.getElementById("app");
 const API = "/api/users"; // You're hitting your own server
 console.log("✅ app.js is loaded");
 
+const socket = io();
+
+socket.on('leaderboardUpdate', () => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (user) renderDashboard(user);
+});
+
+
 //controller functions that will be constant for every page
 function renderLayout(contentHtml) {
   app.innerHTML = `
