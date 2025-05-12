@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url("https://i.pinimg.com/originals/6b/3c/a5/6b3ca5844f5b9bbad16a001f22226e8c.gif") no-repeat center center fixed;
+    background-size: cover;
+    color: #7c7c7c;
+}
+
+  
+  header, footer {
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  #bullToast {
+    position: fixed;
+    bottom: 120px;
+    right: 20px;
+    background: #222;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 12;
+  }
+  
+  .bull-icon {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    opacity: 0.9;
+    animation: bullFloat 2.5s ease-in-out infinite;
+    cursor: pointer;
+    z-index: 11;
+  }
+  
+  @keyframes bullFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+  }
+  
